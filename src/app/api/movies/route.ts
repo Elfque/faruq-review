@@ -1,8 +1,7 @@
 "use server";
+import { NextRequest } from "next/server";
 
-import { NextApiRequest } from "next";
-
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
   if (req.method !== "GET") {
     return new Response(JSON.stringify({ error: "Method Not Allowed" }), {
       status: 405,

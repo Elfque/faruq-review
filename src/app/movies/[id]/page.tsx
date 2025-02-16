@@ -19,6 +19,7 @@ const page = () => {
       .then(({ data }) => {
         setMovie(data);
         setLoading(false);
+        console.log(data);
       })
       .catch((err) => {
         setLoading(false);
@@ -49,13 +50,15 @@ const page = () => {
             />
 
             <div className="w-full h-full text-white bg-black/50 py-[30px] px-10 relative z-10 grid md:grid-cols-[auto_1fr] gap-5 items-center">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_IMAGE_BASEURL}${movie.poster_path}`}
-                alt="Backdrop image"
-                width={300}
-                height={450}
-                className="w-full object-cover"
-              />
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_BASEURL}${movie?.poster_path}`}
+                  alt="Backdrop image"
+                  width={300}
+                  height={450}
+                  className="w-full object-cover max-w-80"
+                />
+              </div>
 
               <div>
                 <Link
