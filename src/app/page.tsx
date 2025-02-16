@@ -1,5 +1,6 @@
 "use client";
 
+import PageLoader from "@/components/PageLoader";
 import SIngleMovie from "@/components/SIngleMovie";
 import { useEffect, useState } from "react";
 
@@ -27,13 +28,15 @@ export default function Home() {
 
   return (
     <div className="p-6">
-      <div className="movie-grid">
-        {loading ? (
-          <div className=""></div>
-        ) : (
-          movies?.map((item: any) => <SIngleMovie movie={item} key={item.id} />)
-        )}
-      </div>
+      {loading ? (
+        <PageLoader />
+      ) : (
+        <div className="movie-grid">
+          {movies?.map((item: any) => (
+            <SIngleMovie movie={item} key={item.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -44,19 +44,19 @@ const page = () => {
             <Image
               src={`${process.env.NEXT_PUBLIC_IMAGE_BASEURL}${movie.backdrop_path}`}
               alt="Backdrop image"
-              width={1400}
-              height={500}
+              layout="fill"
+              objectFit="cover"
               className="w-full h-full object-cover absolute left-0 top-0 z-0"
             />
 
-            <div className="w-full h-full text-white bg-black/50 py-[30px] px-10 relative z-10 grid md:grid-cols-[auto_1fr] gap-5 items-center">
+            <div className="w-full h-full text-white bg-black/50 py-[30px] px-10 relative z-10 grid md:grid-cols-[300px_1fr] gap-5 items-center">
               <div className="flex justify-center md:justify-start">
                 <Image
                   src={`${process.env.NEXT_PUBLIC_IMAGE_BASEURL}${movie?.poster_path}`}
                   alt="Backdrop image"
                   width={300}
                   height={450}
-                  className="w-full object-cover max-w-80"
+                  className="w-full object-cover max-w-80 rounded-lg"
                 />
               </div>
 
