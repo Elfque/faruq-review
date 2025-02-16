@@ -2,10 +2,7 @@
 
 import { NextRequest } from "next/server";
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET(req: NextRequest, { params }: { params: any }) {
   const { id } = await params;
 
   if (req.method !== "GET") {
